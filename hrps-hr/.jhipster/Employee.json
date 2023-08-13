@@ -1,0 +1,181 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813141512",
+  "clientRootFolder": "hrps-hr",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "employee",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "surname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "GenderType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "MALE,FEMALE,OTHER"
+    },
+    {
+      "fieldName": "maritalStatus",
+      "fieldType": "MaritalStatusType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SINGLE,MARRIED,DIVORCED,WIDOWED,OTHER"
+    },
+    {
+      "fieldName": "residentAddress",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "residentCountry",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "residentCity",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lga",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bvn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateEmployed",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "employmentStatus",
+      "fieldType": "EmploymentStatusType",
+      "fieldValues": "FULL_TIME,PART_TIME,CONTRACT"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "hrps-hr",
+  "name": "Employee",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "emergencyContact",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "emergencyContact",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "nextOfKin",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "nextOfKin",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "workHistory",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "workHistory",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "referee",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "referees",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "educationHistory",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "educationHistory",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "skill",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "skills",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "benefit",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "benefits",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "professionalQualification",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "professionalQualifications",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeDocument",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "documents",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "salary",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "salary",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

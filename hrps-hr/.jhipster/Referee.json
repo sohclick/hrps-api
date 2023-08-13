@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813141516",
+  "clientRootFolder": "hrps-hr",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "referee",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "hrps-hr",
+  "name": "Referee",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "referees",
+      "relationshipName": "employee",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813211859",
+  "clientRootFolder": "hrps-payroll",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "payment_schedule",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "frequency",
+      "fieldType": "PaymentFrequency",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "WEEKLY,BI_WEEKLY,MONTHLY"
+    }
+  ],
+  "microserviceName": "hrps-payroll",
+  "name": "PaymentSchedule",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

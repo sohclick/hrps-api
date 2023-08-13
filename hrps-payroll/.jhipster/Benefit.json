@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813211856",
+  "clientRootFolder": "hrps-payroll",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "benefit",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "paidLeave",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "unpaidLeave",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "maternityLeave",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "medicalBenefits",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "dentalAndVisionBenefits",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "lifeInsurance",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "retirementBenefits",
+      "fieldType": "Boolean"
+    }
+  ],
+  "microserviceName": "hrps-payroll",
+  "name": "Benefit",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,42 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813141514",
+  "clientRootFolder": "hrps-hr",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "next_of_kin",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contactInformation",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "relationship",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "hrps-hr",
+  "name": "NextOfKin",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "nextOfKin",
+      "relationshipName": "employee",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813141517",
+  "clientRootFolder": "hrps-hr",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "salary",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "hrps-hr",
+  "name": "Salary",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "salary",
+      "relationshipName": "employee",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

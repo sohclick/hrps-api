@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813135620",
+  "clientRootFolder": "hrps-notification",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "notification",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "NEW,IN_PROGRESS,DELIVERED,RESOLVED"
+    },
+    {
+      "fieldName": "sender",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "receiver",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subject",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "read",
+      "fieldType": "ReadStatus",
+      "fieldValues": "UNREAD,READ"
+    },
+    {
+      "fieldName": "notificationType",
+      "fieldType": "NotificationType",
+      "fieldValues": "ALERT,REMINDER,INFORMATION"
+    }
+  ],
+  "microserviceName": "hrps-notification",
+  "name": "Notification",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

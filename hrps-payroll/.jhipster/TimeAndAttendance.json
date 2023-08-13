@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813211904",
+  "clientRootFolder": "hrps-payroll",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "time_and_attendance",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "employeeWorkingHours",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "overtimeHours",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "leavesTaken",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "microserviceName": "hrps-payroll",
+  "name": "TimeAndAttendance",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,31 @@
+entity Notification {
+    id String,
+    status Status required,
+    sender String required,
+    receiver String,
+    subject String,
+    content String,
+    read ReadStatus,
+    notificationType NotificationType
+}
+
+enum Status {
+    NEW, IN_PROGRESS, DELIVERED, RESOLVED
+}
+
+enum ReadStatus {
+    UNREAD, READ
+}
+
+enum NotificationType {
+    ALERT, REMINDER, INFORMATION
+}
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

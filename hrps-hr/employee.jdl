@@ -1,0 +1,158 @@
+// Employee Personal details
+entity Employee {
+    id Long,
+    surname String required,
+    firstName String required,
+    middleName String,
+    dateOfBirth LocalDate required,
+    gender GenderType required,
+    maritalStatus MaritalStatusType required,
+    residentAddress String required,
+    residentCountry String required,
+    residentCity String required,
+    nationality String required,
+    state String required,
+    lga String required,
+    phoneNumber String,
+    email String,
+    bvn String,
+    dateEmployed LocalDate,
+    employmentStatus EmploymentStatusType,
+    department String,
+    jobTitle String
+}
+
+// Employee Document
+entity EmployeeDocument {
+    id Long,
+    description String required,
+    documentType DocumentType required,
+    uploadDate LocalDate,
+    url String
+}
+
+// Education
+entity EducationHistory {
+    id Long,
+    degree String,
+    school String,
+    country String,
+    state String,
+    city String,
+    startDate LocalDate,
+    endDate LocalDate
+}
+
+// Skills
+entity Skill {
+    id Long,
+    name String required
+}
+
+// Work experience
+entity WorkHistory {
+    id Long,
+    employer String,
+    country String,
+    state String,
+    location String,
+    jobTitle String,
+    startDate LocalDate,
+    endDate LocalDate
+}
+
+// Professional Qualifications
+entity ProfessionalQualification {
+    id Long,
+    qualificationName String,
+    qualificationInstitution String,
+    qualificationDate LocalDate
+}
+
+// References
+entity Referee {
+    id Long,
+    name String required,
+    phoneNumber String,
+    email String,
+    jobTitle String
+}
+
+// Salary and benefits
+entity Salary {
+    id Long,
+    amount BigDecimal required
+}
+
+// Benefits
+entity Benefit {
+    id Long,
+    type BenefitType required
+}
+
+// Other
+entity EmergencyContact {
+    id Long,
+    name String required,
+    phoneNumber String,
+    email String,
+    relationship String
+}
+
+entity NextOfKin {
+    id Long,
+    name String required,
+    contactInformation String required,
+    relationship String
+}
+
+// Enumeration definitions
+
+enum DocumentType {
+    RESUME, COVER_LETTER, PRIMARY_CERT, SSCE, WAEC, NECO, NABTEB, GCE, BACHELOR_DEGREE, MASTERS_DEGREE, PHD, ID_CARD, PASSPORT, NYSC, NYSC_EXEMPTION, OTHER
+}
+
+enum GenderType {
+    MALE, FEMALE, OTHER
+}
+
+enum MaritalStatusType {
+    SINGLE, MARRIED, DIVORCED, WIDOWED, OTHER
+}
+
+enum EmploymentStatusType {
+    FULL_TIME, PART_TIME, CONTRACT
+}
+
+enum BenefitType {
+    HEALTH_INSURANCE, DENTAL_INSURANCE, VACATION_DAYS, OTHER
+}
+
+// Relationship definitions
+relationship OneToOne {
+    Employee{emergencyContact} to EmergencyContact{employee},
+    Employee{nextOfKin} to NextOfKin{employee}
+}
+
+relationship OneToMany {
+    Employee{workHistory} to WorkHistory{employee},
+    Employee{referees} to Referee{employee},
+    Employee{educationHistory} to EducationHistory{employee},
+    Employee{skills} to Skill{employee},
+    Employee{benefits} to Benefit{employee},
+    Employee{professionalQualifications} to ProfessionalQualification{employee},
+    Employee{documents} to EmployeeDocument{employee}
+}
+
+relationship ManyToOne {
+    Employee{salary} to Salary{employee}
+}
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

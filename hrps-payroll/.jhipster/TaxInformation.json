@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813211903",
+  "clientRootFolder": "hrps-payroll",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "tax_information",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "employeeTaxDeclaration",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxFilingStatus",
+      "fieldType": "TaxFilingStatus",
+      "fieldValues": "SINGLE,MARRIED,HEAD_OF_HOUSEHOLD"
+    },
+    {
+      "fieldName": "withholdingTaxInformation",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "microserviceName": "hrps-payroll",
+  "name": "TaxInformation",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

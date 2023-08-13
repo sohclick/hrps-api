@@ -1,0 +1,127 @@
+enum TaxFilingStatus {
+    SINGLE, MARRIED, HEAD_OF_HOUSEHOLD
+}
+
+enum Gender {
+    MALE, FEMALE, BINARY
+}
+
+enum MaritalStatusType {
+    SINGLE, MARRIED, DIVORCED, WIDOWED, OTHER
+}
+
+enum EmploymentStatusType {
+    FULL_TIME, PART_TIME, CONTRACT, TEMPORARY, FREELANCE, OTHER
+}
+
+
+entity SalaryComponent {
+    id Long,
+    name String required,
+    amount BigDecimal required
+}
+
+entity Employee {
+    id Long,
+    surname String required,
+    firstName String required,
+    middleName String,
+    dateOfBirth LocalDate required,
+    gender Gender required,
+    maritalStatus MaritalStatusType required,
+    residentAddress String required,
+    residentCountry String required,
+    residentCity String required,
+    nationality String required,
+    state String required,
+    lga String required,
+    phoneNumber String,
+    email String,
+    bvn String,
+    dateEmployed LocalDate,
+    employmentStatus EmploymentStatusType,
+    department String,
+    jobTitle String
+}
+
+entity Payroll {
+    id Long,
+    basicSalary BigDecimal required,
+    bonus BigDecimal,
+    overtimePay BigDecimal,
+    commission BigDecimal,
+    incentives BigDecimal
+}
+
+entity PaymentSchedule {
+    id Long,
+    startDate LocalDate required,
+    endDate LocalDate required,
+    frequency PaymentFrequency required
+}
+
+enum PaymentFrequency {
+    WEEKLY, BI_WEEKLY, MONTHLY
+}
+
+entity Deduction {
+    id Long,
+    taxDeductions BigDecimal,
+    providentFund BigDecimal,
+    healthInsurance BigDecimal,
+    loanRepayments BigDecimal,
+    otherDeductions BigDecimal,
+    totalDeduction BigDecimal
+}
+
+entity Benefit {
+    id Long,
+    paidLeave BigDecimal,
+    unpaidLeave BigDecimal,
+    maternityLeave BigDecimal,
+    medicalBenefits Boolean,
+    dentalAndVisionBenefits Boolean,
+    lifeInsurance Boolean,
+    retirementBenefits Boolean
+}
+
+entity TaxInformation {
+    id Long,
+    employeeTaxDeclaration String,
+    taxFilingStatus TaxFilingStatus,
+    withholdingTaxInformation BigDecimal
+}
+
+entity TimeAndAttendance {
+    id Long,
+    employeeWorkingHours BigDecimal,
+    overtimeHours BigDecimal,
+    leavesTaken BigDecimal
+}
+
+entity Report {
+    id Long,
+    payrollSummaryReports Boolean,
+    payslips Boolean,
+    taxReports Boolean,
+    yearEndReports Boolean
+}
+
+relationship OneToOne {
+    Payroll{paymentSchedule} to PaymentSchedule
+    Payroll{deductions} to Deduction
+    Payroll{benefits} to Benefit
+    Payroll{taxInformation} to TaxInformation
+    Payroll{timeAndAttendance} to TimeAndAttendance
+    Payroll{reportsAndAnalytics} to Report
+    Employee{payroll} to Payroll
+}
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

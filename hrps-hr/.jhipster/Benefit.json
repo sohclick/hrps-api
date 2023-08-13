@@ -1,0 +1,34 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813141509",
+  "clientRootFolder": "hrps-hr",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "benefit",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "BenefitType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "HEALTH_INSURANCE,DENTAL_INSURANCE,VACATION_DAYS,OTHER"
+    }
+  ],
+  "microserviceName": "hrps-hr",
+  "name": "Benefit",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "benefits",
+      "relationshipName": "employee",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

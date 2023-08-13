@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813211901",
+  "clientRootFolder": "hrps-payroll",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "report",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "payrollSummaryReports",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "payslips",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "taxReports",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "yearEndReports",
+      "fieldType": "Boolean"
+    }
+  ],
+  "microserviceName": "hrps-payroll",
+  "name": "Report",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

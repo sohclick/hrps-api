@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813211857",
+  "clientRootFolder": "hrps-payroll",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "deduction",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "taxDeductions",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "providentFund",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "healthInsurance",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "loanRepayments",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "otherDeductions",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalDeduction",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "microserviceName": "hrps-payroll",
+  "name": "Deduction",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

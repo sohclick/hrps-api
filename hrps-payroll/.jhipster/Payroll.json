@@ -1,0 +1,78 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813211900",
+  "clientRootFolder": "hrps-payroll",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "payroll",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "basicSalary",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "bonus",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "overtimePay",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "commission",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "incentives",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "microserviceName": "hrps-payroll",
+  "name": "Payroll",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "paymentSchedule",
+      "relationshipName": "paymentSchedule",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "deduction",
+      "relationshipName": "deductions",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "benefit",
+      "relationshipName": "benefits",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "taxInformation",
+      "relationshipName": "taxInformation",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "timeAndAttendance",
+      "relationshipName": "timeAndAttendance",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "report",
+      "relationshipName": "reportsAndAnalytics",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

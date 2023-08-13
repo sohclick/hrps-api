@@ -1,0 +1,117 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813211858",
+  "clientRootFolder": "hrps-payroll",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "employee",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "surname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "Gender",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "MALE,FEMALE,BINARY"
+    },
+    {
+      "fieldName": "maritalStatus",
+      "fieldType": "MaritalStatusType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SINGLE,MARRIED,DIVORCED,WIDOWED,OTHER"
+    },
+    {
+      "fieldName": "residentAddress",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "residentCountry",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "residentCity",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lga",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bvn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateEmployed",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "employmentStatus",
+      "fieldType": "EmploymentStatusType",
+      "fieldValues": "FULL_TIME,PART_TIME,CONTRACT,TEMPORARY,FREELANCE,OTHER"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "hrps-payroll",
+  "name": "Employee",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "payroll",
+      "relationshipName": "payroll",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

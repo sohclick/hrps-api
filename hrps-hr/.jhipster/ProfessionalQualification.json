@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813141515",
+  "clientRootFolder": "hrps-hr",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "professional_qualification",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "qualificationName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "qualificationInstitution",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "qualificationDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "microserviceName": "hrps-hr",
+  "name": "ProfessionalQualification",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "professionalQualifications",
+      "relationshipName": "employee",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

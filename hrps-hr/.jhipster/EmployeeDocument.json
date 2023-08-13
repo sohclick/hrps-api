@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20230813141513",
+  "clientRootFolder": "hrps-hr",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "entityTableName": "employee_document",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "documentType",
+      "fieldType": "DocumentType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "RESUME,COVER_LETTER,PRIMARY_CERT,SSCE,WAEC,NECO,NABTEB,GCE,BACHELOR_DEGREE,MASTERS_DEGREE,PHD,ID_CARD,PASSPORT,NYSC,NYSC_EXEMPTION,OTHER"
+    },
+    {
+      "fieldName": "uploadDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "hrps-hr",
+  "name": "EmployeeDocument",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "documents",
+      "relationshipName": "employee",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
