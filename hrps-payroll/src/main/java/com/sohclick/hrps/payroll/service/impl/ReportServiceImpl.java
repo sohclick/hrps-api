@@ -70,12 +70,6 @@ public class ReportServiceImpl implements ReportService {
      *  Get all the reports where Payroll is {@code null}.
      *  @return the list of entities.
      */
-
-    public List<ReportDTO> findAllWherePayrollIsNull() {
-        log.debug("Request to get all reports where Payroll is null");
-        return reportRepository.findAll().filter(report -> report.getPayroll() == null).map(reportMapper::toDto);
-    }
-
     public Mono<Long> countAll() {
         return reportRepository.count();
     }

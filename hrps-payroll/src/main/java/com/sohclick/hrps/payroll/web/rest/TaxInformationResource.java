@@ -181,10 +181,7 @@ public class TaxInformationResource {
         ServerHttpRequest request,
         @RequestParam(required = false) String filter
     ) {
-        if ("payroll-is-null".equals(filter)) {
-            log.debug("REST request to get all TaxInformations where payroll is null");
-            return new ResponseEntity<>(taxInformationService.findAllWherePayrollIsNull(), HttpStatus.OK);
-        }
+
         log.debug("REST request to get a page of TaxInformations");
         return taxInformationService
             .countAll()

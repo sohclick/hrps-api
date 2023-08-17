@@ -43,13 +43,6 @@ public interface TimeAndAttendanceService {
     Flux<TimeAndAttendanceDTO> findAll(Pageable pageable);
 
     /**
-     * Get all the TimeAndAttendanceDTO where Payroll is {@code null}.
-     *
-     * @return the {@link Flux} of entities.
-     */
-    Flux<TimeAndAttendanceDTO> findAllWherePayrollIsNull();
-
-    /**
      * Returns the number of timeAndAttendances available.
      * @return the number of entities in the database.
      *

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d432cee8-7558-4726-a375-ada7793dc8b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,11 +34,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/ZBOOK 15 G3/Documents/sohclick/hrps-api/hrps-notification/src/main/resources/templates",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -54,6 +62,7 @@
   </component>
   <component name="RunManager" selected="Spring Boot.HrpsGatewayApp">
     <configuration name="HrpsGatewayApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" value="dev" />
       <module name="hrps-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sohclick.hrps.gateway.HrpsGatewayApp" />
       <method v="2">
@@ -81,6 +90,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.HrpsGatewayApp" />
+      <item itemvalue="Spring Boot.HrpsHrApp" />
+      <item itemvalue="Spring Boot.HrpsNotificationApp" />
+      <item itemvalue="Spring Boot.HrpsPayrollApp" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -90,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691876288290</updated>
-      <workItem from="1691876290954" duration="9262000" />
+      <workItem from="1691876290954" duration="19490000" />
     </task>
     <servers />
   </component>

@@ -70,12 +70,6 @@ public class PayrollServiceImpl implements PayrollService {
      *  Get all the payrolls where Employee is {@code null}.
      *  @return the list of entities.
      */
-
-    public List<PayrollDTO> findAllWhereEmployeeIsNull() {
-        log.debug("Request to get all payrolls where Employee is null");
-        return payrollRepository.findAll().filter(payroll -> payroll.getEmployee() == null).map(payrollMapper::toDto);
-    }
-
     public Mono<Long> countAll() {
         return payrollRepository.count();
     }

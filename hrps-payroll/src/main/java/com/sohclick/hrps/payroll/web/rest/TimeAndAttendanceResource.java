@@ -184,10 +184,7 @@ public class TimeAndAttendanceResource {
         ServerHttpRequest request,
         @RequestParam(required = false) String filter
     ) {
-        if ("payroll-is-null".equals(filter)) {
-            log.debug("REST request to get all TimeAndAttendances where payroll is null");
-            return new ResponseEntity<>(timeAndAttendanceService.findAllWherePayrollIsNull(), HttpStatus.OK);
-        }
+
         log.debug("REST request to get a page of TimeAndAttendances");
         return timeAndAttendanceService
             .countAll()

@@ -43,13 +43,6 @@ public interface TaxInformationService {
     Flux<TaxInformationDTO> findAll(Pageable pageable);
 
     /**
-     * Get all the TaxInformationDTO where Payroll is {@code null}.
-     *
-     * @return the {@link Flux} of entities.
-     */
-    Flux<TaxInformationDTO> findAllWherePayrollIsNull();
-
-    /**
      * Returns the number of taxInformations available.
      * @return the number of entities in the database.
      *

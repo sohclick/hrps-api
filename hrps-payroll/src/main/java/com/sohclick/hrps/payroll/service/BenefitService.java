@@ -42,12 +42,6 @@ public interface BenefitService {
      */
     Flux<BenefitDTO> findAll(Pageable pageable);
 
-    /**
-     * Get all the BenefitDTO where Payroll is {@code null}.
-     *
-     * @return the {@link Flux} of entities.
-     */
-    Flux<BenefitDTO> findAllWherePayrollIsNull();
 
     /**
      * Returns the number of benefits available.

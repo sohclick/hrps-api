@@ -47,7 +47,6 @@ public interface PayrollService {
      *
      * @return the {@link Flux} of entities.
      */
-    Flux<PayrollDTO> findAllWhereEmployeeIsNull();
 
     /**
      * Returns the number of payrolls available.

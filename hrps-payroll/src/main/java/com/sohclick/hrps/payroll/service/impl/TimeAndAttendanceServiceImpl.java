@@ -74,14 +74,6 @@ public class TimeAndAttendanceServiceImpl implements TimeAndAttendanceService {
      *  @return the list of entities.
      */
 
-    public List<TimeAndAttendanceDTO> findAllWherePayrollIsNull() {
-        log.debug("Request to get all timeAndAttendances where Payroll is null");
-        return timeAndAttendanceRepository
-            .findAll()
-            .filter(timeAndAttendance -> timeAndAttendance.getPayroll() == null)
-            .map(timeAndAttendanceMapper::toDto);
-    }
-
     public Mono<Long> countAll() {
         return timeAndAttendanceRepository.count();
     }

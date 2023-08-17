@@ -71,11 +71,6 @@ public class BenefitServiceImpl implements BenefitService {
      *  @return the list of entities.
      */
 
-    public List<BenefitDTO> findAllWherePayrollIsNull() {
-        log.debug("Request to get all benefits where Payroll is null");
-        return benefitRepository.findAll().filter(benefit -> benefit.getPayroll() == null).map(benefitMapper::toDto);
-    }
-
     public Mono<Long> countAll() {
         return benefitRepository.count();
     }

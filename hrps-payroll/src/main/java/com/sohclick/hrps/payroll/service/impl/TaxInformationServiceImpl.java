@@ -65,20 +65,6 @@ public class TaxInformationServiceImpl implements TaxInformationService {
         log.debug("Request to get all TaxInformations");
         return taxInformationRepository.findAllBy(pageable).map(taxInformationMapper::toDto);
     }
-
-    /**
-     *  Get all the taxInformations where Payroll is {@code null}.
-     *  @return the list of entities.
-     */
-
-    public List<TaxInformationDTO> findAllWherePayrollIsNull() {
-        log.debug("Request to get all taxInformations where Payroll is null");
-        return taxInformationRepository
-            .findAll()
-            .filter(taxInformation -> taxInformation.getPayroll() == null)
-            .map(taxInformationMapper::toDto);
-    }
-
     public Mono<Long> countAll() {
         return taxInformationRepository.count();
     }

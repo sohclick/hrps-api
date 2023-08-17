@@ -180,10 +180,7 @@ public class ReportResource {
         ServerHttpRequest request,
         @RequestParam(required = false) String filter
     ) {
-        if ("payroll-is-null".equals(filter)) {
-            log.debug("REST request to get all Reports where payroll is null");
-            return new ResponseEntity<>(reportService.findAllWherePayrollIsNull(), HttpStatus.OK);
-        }
+
         log.debug("REST request to get a page of Reports");
         return reportService
             .countAll()

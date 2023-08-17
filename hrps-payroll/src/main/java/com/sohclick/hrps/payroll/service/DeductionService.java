@@ -47,7 +47,6 @@ public interface DeductionService {
      *
      * @return the {@link Flux} of entities.
      */
-    Flux<DeductionDTO> findAllWherePayrollIsNull();
 
     /**
      * Returns the number of deductions available.

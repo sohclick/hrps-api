@@ -183,10 +183,7 @@ public class PaymentScheduleResource {
         ServerHttpRequest request,
         @RequestParam(required = false) String filter
     ) {
-        if ("payroll-is-null".equals(filter)) {
-            log.debug("REST request to get all PaymentSchedules where payroll is null");
-            return new ResponseEntity<>(paymentScheduleService.findAllWherePayrollIsNull(), HttpStatus.OK);
-        }
+
         log.debug("REST request to get a page of PaymentSchedules");
         return paymentScheduleService
             .countAll()

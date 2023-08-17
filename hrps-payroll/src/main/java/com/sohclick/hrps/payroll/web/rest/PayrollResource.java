@@ -182,10 +182,7 @@ public class PayrollResource {
         ServerHttpRequest request,
         @RequestParam(required = false) String filter
     ) {
-        if ("employee-is-null".equals(filter)) {
-            log.debug("REST request to get all Payrolls where employee is null");
-            return new ResponseEntity<>(payrollService.findAllWhereEmployeeIsNull(), HttpStatus.OK);
-        }
+
         log.debug("REST request to get a page of Payrolls");
         return payrollService
             .countAll()

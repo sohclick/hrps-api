@@ -41,14 +41,6 @@ public interface ReportService {
      * @return the list of entities.
      */
     Flux<ReportDTO> findAll(Pageable pageable);
-
-    /**
-     * Get all the ReportDTO where Payroll is {@code null}.
-     *
-     * @return the {@link Flux} of entities.
-     */
-    Flux<ReportDTO> findAllWherePayrollIsNull();
-
     /**
      * Returns the number of reports available.
      * @return the number of entities in the database.

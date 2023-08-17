@@ -65,20 +65,6 @@ public class PaymentScheduleServiceImpl implements PaymentScheduleService {
         log.debug("Request to get all PaymentSchedules");
         return paymentScheduleRepository.findAllBy(pageable).map(paymentScheduleMapper::toDto);
     }
-
-    /**
-     *  Get all the paymentSchedules where Payroll is {@code null}.
-     *  @return the list of entities.
-     */
-
-    public List<PaymentScheduleDTO> findAllWherePayrollIsNull() {
-        log.debug("Request to get all paymentSchedules where Payroll is null");
-        return paymentScheduleRepository
-            .findAll()
-            .filter(paymentSchedule -> paymentSchedule.getPayroll() == null)
-            .map(paymentScheduleMapper::toDto);
-    }
-
     public Mono<Long> countAll() {
         return paymentScheduleRepository.count();
     }

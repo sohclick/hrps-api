@@ -42,12 +42,6 @@ public interface PaymentScheduleService {
      */
     Flux<PaymentScheduleDTO> findAll(Pageable pageable);
 
-    /**
-     * Get all the PaymentScheduleDTO where Payroll is {@code null}.
-     *
-     * @return the {@link Flux} of entities.
-     */
-    Flux<PaymentScheduleDTO> findAllWherePayrollIsNull();
 
     /**
      * Returns the number of paymentSchedules available.

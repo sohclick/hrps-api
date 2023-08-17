@@ -38,7 +38,7 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public Mono<NotificationDTO> update(NotificationDTO notificationDTO) {
         log.debug("Request to update Notification : {}", notificationDTO);
-        return notificationRepository.save(notificationMapper.toEntity(notificationDTO).setIsPersisted()).map(notificationMapper::toDto);
+        return notificationRepository.save(notificationMapper.toEntity(notificationDTO)).map(notificationMapper::toDto);
     }
 
     @Override

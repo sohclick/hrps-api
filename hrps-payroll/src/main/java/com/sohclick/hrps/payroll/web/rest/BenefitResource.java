@@ -180,10 +180,6 @@ public class BenefitResource {
         ServerHttpRequest request,
         @RequestParam(required = false) String filter
     ) {
-        if ("payroll-is-null".equals(filter)) {
-            log.debug("REST request to get all Benefits where payroll is null");
-            return new ResponseEntity<>(benefitService.findAllWherePayrollIsNull(), HttpStatus.OK);
-        }
         log.debug("REST request to get a page of Benefits");
         return benefitService
             .countAll()

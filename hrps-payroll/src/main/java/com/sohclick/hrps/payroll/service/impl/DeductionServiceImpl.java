@@ -71,11 +71,6 @@ public class DeductionServiceImpl implements DeductionService {
      *  @return the list of entities.
      */
 
-    public List<DeductionDTO> findAllWherePayrollIsNull() {
-        log.debug("Request to get all deductions where Payroll is null");
-        return deductionRepository.findAll().filter(deduction -> deduction.getPayroll() == null).map(deductionMapper::toDto);
-    }
-
     public Mono<Long> countAll() {
         return deductionRepository.count();
     }
