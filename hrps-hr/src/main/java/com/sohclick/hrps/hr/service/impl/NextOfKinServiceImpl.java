@@ -71,11 +71,6 @@ public class NextOfKinServiceImpl implements NextOfKinService {
      *  @return the list of entities.
      */
 
-    public List<NextOfKinDTO> findAllWhereEmployeeIsNull() {
-        log.debug("Request to get all nextOfKins where Employee is null");
-        return nextOfKinRepository.findAll().filter(nextOfKin -> nextOfKin.getEmployee() == null).map(nextOfKinMapper::toDto);
-    }
-
     public Mono<Long> countAll() {
         return nextOfKinRepository.count();
     }

@@ -74,14 +74,6 @@ public class EmergencyContactServiceImpl implements EmergencyContactService {
      *  @return the list of entities.
      */
 
-    public List<EmergencyContactDTO> findAllWhereEmployeeIsNull() {
-        log.debug("Request to get all emergencyContacts where Employee is null");
-        return emergencyContactRepository
-            .findAll()
-            .filter(emergencyContact -> emergencyContact.getEmployee() == null)
-            .map(emergencyContactMapper::toDto);
-    }
-
     public Mono<Long> countAll() {
         return emergencyContactRepository.count();
     }

@@ -186,10 +186,6 @@ public class EmergencyContactResource {
         ServerHttpRequest request,
         @RequestParam(required = false) String filter
     ) {
-        if ("employee-is-null".equals(filter)) {
-            log.debug("REST request to get all EmergencyContacts where employee is null");
-            return new ResponseEntity<>(emergencyContactService.findAllWhereEmployeeIsNull(), HttpStatus.OK);
-        }
         log.debug("REST request to get a page of EmergencyContacts");
         return emergencyContactService
             .countAll()

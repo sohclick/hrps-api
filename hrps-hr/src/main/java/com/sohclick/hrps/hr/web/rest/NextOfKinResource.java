@@ -182,10 +182,6 @@ public class NextOfKinResource {
         ServerHttpRequest request,
         @RequestParam(required = false) String filter
     ) {
-        if ("employee-is-null".equals(filter)) {
-            log.debug("REST request to get all NextOfKins where employee is null");
-            return new ResponseEntity<>(nextOfKinService.findAllWhereEmployeeIsNull(), HttpStatus.OK);
-        }
         log.debug("REST request to get a page of NextOfKins");
         return nextOfKinService
             .countAll()

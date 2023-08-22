@@ -43,13 +43,6 @@ public interface EmergencyContactService {
     Flux<EmergencyContactDTO> findAll(Pageable pageable);
 
     /**
-     * Get all the EmergencyContactDTO where Employee is {@code null}.
-     *
-     * @return the {@link Flux} of entities.
-     */
-    Flux<EmergencyContactDTO> findAllWhereEmployeeIsNull();
-
-    /**
      * Returns the number of emergencyContacts available.
      * @return the number of entities in the database.
      *

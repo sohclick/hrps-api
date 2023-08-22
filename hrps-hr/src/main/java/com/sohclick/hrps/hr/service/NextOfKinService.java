@@ -1,7 +1,6 @@
 package com.sohclick.hrps.hr.service;
 
 import com.sohclick.hrps.hr.service.dto.NextOfKinDTO;
-import java.util.List;
 import org.springframework.data.domain.Pageable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -41,13 +40,6 @@ public interface NextOfKinService {
      * @return the list of entities.
      */
     Flux<NextOfKinDTO> findAll(Pageable pageable);
-
-    /**
-     * Get all the NextOfKinDTO where Employee is {@code null}.
-     *
-     * @return the {@link Flux} of entities.
-     */
-    Flux<NextOfKinDTO> findAllWhereEmployeeIsNull();
 
     /**
      * Returns the number of nextOfKins available.
